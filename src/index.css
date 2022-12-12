@@ -1,13 +1,194 @@
-body {
+* {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --grey-70 : #4a4b57;
+  --grey-60 : #5a5b6a;
+  --orange-300: #fc9d69;
+  --orange-550: #fb813e;
+  --orange-800: #f85618;
+  --orange-700: #f9601e;
+  --blue-primary : #163c63;
+  --blue-light : #abdbe3;
+}
+
+.flex-col{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-row{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.App{
+  font-size: 5rem;
+}
+
+.header{
+  background-image: linear-gradient(to left, var(--blue-light), var(--blue-primary) );
+  padding: 1.5rem;
+  justify-content: space-between;
+  height: 4rem;
+  width: 100vw;
+  overflow-y: hidden;
+  color: white;
+}
+
+.cart-logo{
+  justify-content: space-between;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.box{
+  border: var(--grey-70) solid 1px;
+  padding: 1rem;
+  background-image: linear-gradient(to top,#D7CCC8,#F5F5F5,white );
+  margin: 1rem 0.5rem;
+}
+
+.box-shadow{
+  transition: all 0.2s;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--grey-60);
+}
+
+.box-shadow:hover{
+  box-shadow: 0.3rem 0.3rem 0.5rem #66605A;
+}
+
+.iteam-card-img{
+  height: 70%;
+  width: 100%;
+  object-fit:scale-down;
+}
+
+.button{
+  margin: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: black;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.4rem var(--blue-light);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  font-weight:500;
+
+}
+
+.button:hover, 
+button:active{
+  box-shadow: 0.1rem 0.1rem 0.4rem var(--blue-primary);
+}
+
+.button:disabled,
+button:disabled:hover, 
+button:disabled:active{
+  background-color: var(--grey-70);
+  box-shadow: 0.1rem 0.1rem 0.4rem var(--grey-70);
+  cursor: not-allowed;
+}
+
+.hover-increase-size{ 
+  height: 24rem;
+  width: 30rem;
+  transition: all 0.3s;
+
+}
+
+.hover-increase-size:hover{
+  height: 24.5rem;
+  width: 30.5rem;
+}
+
+.backdrop{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(12, 12, 12, 0.9);
+}
+
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  z-index: 20;
+  background-image: linear-gradient(to top,  #969999, #353636 );
+  width: 50%;
+  height: 50%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.x{
+  float: right;
+  font-size: 1rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.cart-button-span{
+  float: right;
+}
+
+
+table{
+  border: none;
+  border-collapse: collapse;
+}
+
+td, th{
+  text-align: center;
+  padding: 1rem;
+  
+}
+
+tbody tr{
+  background-color:#969999;
+}
+
+tbody tr td:last-child{
+  background-color: #353636;
+  color: white;
+}
+
+input{
+  width: 70%;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.error{
+  border: 1px solid red;
+  background-color: rgb(226, 69, 69);
+  border: red;
+}
+
+.error:focus{
+  background-color: rgb(226, 69, 69);
+
 }
